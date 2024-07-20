@@ -84,7 +84,7 @@ h6 {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 body {
@@ -95,7 +95,7 @@ body {
   color: var(--Dark-Slate-Grey);
 }
 
-main {
+.subscribe-article {
   section {
     padding: 2.5rem 1.5rem;
     gap: 2.5rem;
@@ -169,18 +169,85 @@ main {
       color: white;
       font-weight: var(--fw-bold);
       border-radius: 0.5rem;
-      padding: 1rem 1.5rem;
+      padding: 1.125rem 1.5rem;
 
       outline: none;
       border: none;
     }
-    .subscribe-btn:hover {
+    .subscribe-btn:hover:not([disabled]) {
       cursor: pointer;
       background: linear-gradient(#ff6a3a, #ff527b);
+    }
+    .subscribe-btn:disabled {
+      opacity: 0.5;
     }
   }
 }
 
+.message-wrapper {
+  min-height: 100dvh;
+  display: flex;
+  padding: 0 1.5rem;
+}
+
+.subscription-success {
+  padding: 150px 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  header {
+    img {
+      min-width: 4rem;
+    }
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+
+    img {
+      align-self: flex-start;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      max-width: 375px;
+      line-height: 1;
+
+      padding: 0;
+      margin: 0;
+    }
+
+    p {
+      max-width: 375px;
+      line-height: 1.5;
+
+      padding: 0;
+      margin: 0;
+
+      span {
+        font-weight: var(--fw-bold);
+      }
+    }
+  }
+
+  .dismiss-btn {
+    text-decoration: none;
+    color: white;
+    font-weight: var(--fw-bold);
+    background-color: var(--Dark-Slate-Grey);
+
+    padding: 1.125rem 0;
+    border-radius: 0.5rem;
+    text-align: center;
+  }
+
+  .dismiss-btn:hover {
+    cursor: pointer;
+    background: linear-gradient(#ff6a3a, #ff527b);
+  }
+}
 @media (min-width: 425px) {
   body {
     padding: 0 1.25rem;
@@ -195,7 +262,7 @@ main {
 
     background-color: var(--Charcoal-Grey);
   }
-  main {
+  .subscribe-article {
     display: flex;
     flex-direction: row-reverse !important;
     gap: 4rem;
@@ -213,6 +280,28 @@ main {
       .description {
         max-width: 376px;
       }
+    }
+  }
+
+  .message-wrapper {
+    min-height: max-content;
+  }
+  .subscription-success {
+    background-color: var(--White);
+    max-width: 504px;
+    min-height: max-content;
+    padding: 3rem 4rem;
+    border-radius: 2.25rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .attribution {
+    color: var(--White);
+
+    a {
+      color: var(--Tomato);
     }
   }
 }

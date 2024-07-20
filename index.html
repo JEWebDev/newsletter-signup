@@ -12,70 +12,92 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
     <title>
       Frontend Mentor | Newsletter sign-up form with success message
     </title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style></style>
+    <!-- Feel free to remove these styles or customize in your own stylesheet 👍 -->
   </head>
   <body class="flex-col">
-    <main class="flex-col">
-      <header>
-        <picture>
-          <source
-            srcset="assets/images/illustration-sign-up-desktop.svg"
-            media="(min-width: 760px)"
-          />
-          <img src="assets/images/illustration-sign-up-mobile.svg" alt="" />
-        </picture>
-      </header>
-      <section class="flex-col">
-        <div class="description flex-col">
-          <h1>Stay updated!</h1>
-          <p>Join 60,000+ product managers receiving monthly updates on:</p>
-          <ul class="flex-col">
-            <li>
-              <p>Product discovery and building what matters</p>
-            </li>
-            <li>
-              <p>Measuring to ensure updates are success</p>
-            </li>
-            <li>
-              <p>And much more!</p>
-            </li>
-          </ul>
-        </div>
-
-        <form action="" class="form flex-col" id="form">
-          <div class="wrapper flex-col">
-            <div class="container">
-              <label for="email">Email address</label>
-              <label for="email" class="error-msg hidden" id="error-msg"
-                >Valid email required</label
-              >
-            </div>
-            <input
-              class=""
-              type="email"
-              name="email"
-              id="email"
-              placeholder="email@company.com"
-              autocomplete="off"
+    <main>
+      <article class="subscribe-article flex-col">
+        <header>
+          <picture>
+            <source
+              srcset="assets/images/illustration-sign-up-desktop.svg"
+              media="(min-width: 760px)"
             />
+            <img src="assets/images/illustration-sign-up-mobile.svg" alt="" />
+          </picture>
+        </header>
+        <section class="flex-col">
+          <div class="description flex-col">
+            <h1>Stay updated!</h1>
+            <p>Join 60,000+ product managers receiving monthly updates on:</p>
+            <ul class="flex-col">
+              <li>
+                <p>Product discovery and building what matters</p>
+              </li>
+              <li>
+                <p>Measuring to ensure updates are success</p>
+              </li>
+              <li>
+                <p>And much more!</p>
+              </li>
+            </ul>
           </div>
-          <button class="subscribe-btn">Subscribe to monthly newsletter</button>
-        </form>
-      </section>
+
+          <form action="" class="form flex-col" id="subscribe-form" novalidate>
+            <div class="wrapper flex-col">
+              <div class="container">
+                <label for="email">Email address</label>
+                <label for="email" class="error-msg hidden" id="error-msg"
+                  >Valid email required</label
+                >
+              </div>
+              <input
+                class=""
+                type="email"
+                name="email"
+                id="email"
+                placeholder="email@company.com"
+                autocomplete="off"
+              />
+            </div>
+            <button class="subscribe-btn" id="subscribe-btn">
+              Subscribe to monthly newsletter
+            </button>
+          </form>
+        </section>
+      </article>
+
+      <!-- Success message start 
+      
+      Thanks for subscribing! A confirmation email has been sent to
+      ash@loremcompany.com. Please open it and click the button inside to confirm
+      your subscription. Dismiss message -->
+      <!-- Success message end -->
+      <div class="message-wrapper hidden">
+        <section class="subscription-success hidden" id="subscription-success">
+          <header>
+            <img
+              src="assets/images/icon-list.svg"
+              alt="white check icon with orange background"
+            />
+
+            <h1>Thanks for subscribing!</h1>
+            <p>
+              A confirmation email has been sent to
+              <span id="user-email">ash@loremcompany.com</span>. Please open it
+              and click the button inside to confirm your subscription.
+            </p>
+          </header>
+
+          <a href="index.html" class="dismiss-btn">Dismiss message</a>
+        </section>
+      </div>
     </main>
-
-    <!-- Success message start 
-
-    Thanks for subscribing! A confirmation email has been sent to
-    ash@loremcompany.com. Please open it and click the button inside to confirm
-    your subscription. Dismiss message -->
-    <!-- Success message end -->
-
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
