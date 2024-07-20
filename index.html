@@ -17,28 +17,24 @@
     </title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <style></style>
   </head>
-  <body>
-    <main>
+  <body class="flex-col">
+    <main class="flex-col">
       <header>
         <picture>
+          <source
+            srcset="assets/images/illustration-sign-up-desktop.svg"
+            media="(min-width: 760px)"
+          />
           <img src="assets/images/illustration-sign-up-mobile.svg" alt="" />
         </picture>
       </header>
-      <section>
-        <div class="description">
+      <section class="flex-col">
+        <div class="description flex-col">
           <h1>Stay updated!</h1>
           <p>Join 60,000+ product managers receiving monthly updates on:</p>
-          <ul>
+          <ul class="flex-col">
             <li>
               <p>Product discovery and building what matters</p>
             </li>
@@ -50,40 +46,41 @@
             </li>
           </ul>
         </div>
-        <form action="">
-          <label for="email">Email address</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="email@company.com"
-          />
+
+        <form action="" class="form flex-col" id="form">
+          <div class="wrapper flex-col">
+            <div class="container">
+              <label for="email">Email address</label>
+              <label for="email" class="error-msg hidden" id="error-msg"
+                >Valid email required</label
+              >
+            </div>
+            <input
+              class=""
+              type="email"
+              name="email"
+              id="email"
+              placeholder="email@company.com"
+              autocomplete="off"
+            />
+          </div>
           <button class="subscribe-btn">Subscribe to monthly newsletter</button>
         </form>
       </section>
     </main>
-    <!-- Sign-up form start -->
 
-    Stay updated! Join 60,000+ product managers receiving monthly updates on:
-    Product discovery and building what matters Measuring to ensure updates are
-    a success And much more! Email address email@company.com Subscribe to
-    monthly newsletter
-
-    <!-- Sign-up form end -->
-
-    <!-- Success message start -->
+    <!-- Success message start 
 
     Thanks for subscribing! A confirmation email has been sent to
     ash@loremcompany.com. Please open it and click the button inside to confirm
-    your subscription. Dismiss message
-
+    your subscription. Dismiss message -->
     <!-- Success message end -->
 
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by <a href="#">Juan Esparza</a>.
     </div>
   </body>
 </html>
